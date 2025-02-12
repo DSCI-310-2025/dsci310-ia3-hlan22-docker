@@ -36,3 +36,4 @@ USER root
 
 RUN echo "End of the Dockerfile!"
 RUN echo "Adding another edit to the Dockerfile!"
+RUN echo "This edit makes the image automatically built and pushed to DockerHub (again)"
