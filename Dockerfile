@@ -35,3 +35,4 @@ RUN Rscript -e 'renv::restore()'
 USER root
 
 RUN echo "End of the Dockerfile!"
+RUN echo "Adding another edit to the Dockerfile!"
