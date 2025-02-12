@@ -20,8 +20,13 @@ USER rstudio
 # Set up the working directory
 WORKDIR /home/rstudio/dsci310-ia3-hlan22-docker
 
+# Install {renv} before restoring packages
+RUN Rscript -e 'install.packages("renv", repos="https://cran.r-project.org")'
+
 # Copy all the project files
-COPY . .
+COPY renv.lock ./renv.lock  
+#COPY renv/ ./renv/
+COPY cowsay_usage.R ./cowsay_usage.R
 
 # Restore R packages with renv
 RUN Rscript -e 'renv::restore()'
